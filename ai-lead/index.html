@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Implementation Lead – Visual summary</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F4EE;font-family:'Inter',system-ui,sans-serif;color:#111111}
+button{font-family:'Inter',system-ui,sans-serif;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid #111111;outline-offset:2px}
+input[type=range]{width:100%;accent-color:#111111;min-height:44px}
+@media (max-width:640px){.hero-title{font-size:38px !important}.big-num{font-size:44px !important}}
+</style>
+
+</head>
+<body>
+
+<div style="width:100%;box-sizing:border-box;background:#F6F4EE">
+
+<!-- HERO -->
+<div style="background:#111111;color:#F6F4EE;padding:72px 24px 80px">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+<div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#FFC20E;font-weight:600">AI Implementation Lead · EMEA Service</div>
+<h1 class="hero-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64px;line-height:1.05;max-width:900px">AI that fits how our service already works.</h1>
+<p style="margin:0;font-size:20px;line-height:1.5;max-width:760px;color:#D9D6CC">Up to 5 hours a week, in non-service time. Service always comes first. Tools stay inside company-approved systems and belong to the company.</p>
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:12px">
+<div style="flex:1 1 240px;border:1px solid #3B4452;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px">
+<div class="big-num" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:56px;line-height:1;color:#FFC20E">30 → 5 min</div>
+<div style="font-size:16px;line-height:1.4;color:#D9D6CC">per service report with the Report Automator, rolled out across EMEA</div>
+</div>
+<div style="flex:1 1 240px;border:1px solid #3B4452;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px">
+<div class="big-num" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:56px;line-height:1;color:#FFC20E">3</div>
+<div style="font-size:16px;line-height:1.4;color:#D9D6CC">use cases piloted in 90 days, with KPIs you sign off</div>
+</div>
+<div style="flex:1 1 240px;border:1px solid #3B4452;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px">
+<div class="big-num" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:56px;line-height:1;color:#FFC20E">0</div>
+<div style="font-size:16px;line-height:1.4;color:#D9D6CC">customer data in public AI tools</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- RACE -->
+<div style="padding:72px 24px 24px">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#7A5C00;font-weight:600">Proof, already running</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1">One report, two ways</h2>
+<p style="margin:0;font-size:18px;line-height:1.5;max-width:720px;color:#3F4652">Same report. The Report Automator takes 5 minutes, not 30. It gives the same result whoever runs it. One second of animation is 5 minutes of work.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid #DAD6CA;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-size:16px;font-weight:600"><span>By hand</span><span>30 min</span></div>
+<div style="height:28px;background:#ECE9DF;border-radius:8px;overflow:hidden"><div id="bar-manual" style="height:28px;background:#4B5563;border-radius:8px;width:0%"></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-size:16px;font-weight:600"><span>With Report Automator</span><span>5 min</span></div>
+<div style="height:28px;background:#ECE9DF;border-radius:8px;overflow:hidden"><div id="bar-auto" style="height:28px;box-sizing:border-box;background:#FFC20E;border:2px solid #111111;border-radius:8px;width:0%"></div></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<span style="font-size:15px;color:#3F4652;max-width:560px">Report Automator for PARALIGN reports. Built by me in Visual Basic, before using AI to code. Used by colleagues and rolled out across EMEA.</span>
+<button id="race-btn" style="min-height:44px;padding:0 24px;border-radius:10px;border:2px solid #111111;background:#111111;color:#F6F4EE;font-size:16px;font-weight:600">Run the race</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CALCULATOR -->
+<div style="padding:48px 24px 24px">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#7A5C00;font-weight:600">What it is worth</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1">Move the numbers yourself</h2>
+<p style="margin:0;font-size:18px;line-height:1.5;max-width:720px;color:#3F4652">Report time only. The 8 reports a week and the hourly rate are my estimates. Change them to yours.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:stretch">
+<div style="flex:1 1 420px;background:#FFFFFF;border:1px solid #DAD6CA;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:4px">
+<label for="in-reports" style="display:flex;justify-content:space-between;font-size:16px;font-weight:600"><span>Reports per week, whole team</span><span id="v-reports">8</span></label>
+<input id="in-reports" type="range" min="1" max="40" step="1" value="8">
+</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<label for="in-min" style="display:flex;justify-content:space-between;font-size:16px;font-weight:600"><span>Minutes saved per report</span><span id="v-minutes">25</span></label>
+<input id="in-min" type="range" min="5" max="30" step="1" value="25">
+</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<label for="in-weeks" style="display:flex;justify-content:space-between;font-size:16px;font-weight:600"><span>Working weeks per year</span><span id="v-weeks">46</span></label>
+<input id="in-weeks" type="range" min="40" max="52" step="1" value="46">
+</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<label for="in-rate" style="display:flex;justify-content:space-between;font-size:16px;font-weight:600"><span>Engineer hour, EUR</span><span id="v-rate">50</span></label>
+<input id="in-rate" type="range" min="30" max="100" step="5" value="50">
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<button id="preset-low" style="min-height:44px;padding:0 18px;border-radius:10px;border:2px solid #111111;background:#FFFFFF;color:#111111;font-size:15px;font-weight:600">Cautious: 46 weeks, 50 EUR</button>
+<button id="preset-high" style="min-height:44px;padding:0 18px;border-radius:10px;border:2px solid #111111;background:#FFFFFF;color:#111111;font-size:15px;font-weight:600">Higher: 52 weeks, 80 EUR</button>
+</div>
+</div>
+<div style="flex:1 1 320px;background:#111111;color:#FFFFFF;border-radius:16px;padding:28px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="font-size:15px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">Hours saved per year</div>
+<div class="big-num" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64px;line-height:1;color:#FFC20E"><span id="out-hours">153</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<div style="font-size:15px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">Value per year</div>
+<div class="big-num" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64px;line-height:1;color:#FFC20E"><span id="out-eur">7,667</span> EUR</div>
+</div>
+<div style="font-size:14px;line-height:1.5">Estimate. Saved time turns into cash only when it is used for billable work or avoids overtime.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- USE CASES -->
+<div style="padding:48px 24px 24px">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#7A5C00;font-weight:600">What I would build</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1">Three use cases, each with a number</h2>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+
+<div style="flex:1 1 320px;background:#FFFFFF;border:1px solid #DAD6CA;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;line-height:1.2">1. Report Automator 2.0</div>
+<div style="font-size:15px;line-height:1.4;color:#3F4652">Reports come with our main revenue services: PARALIGN and laser tracker.</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">Input</span><span style="font-size:16px;line-height:1.4">Measurement data from PARALIGN and laser tracker services, kept in company systems</span></div>
+<div style="font-size:22px;color:#111111;font-weight:700" aria-hidden="true">↓</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">AI step</span><span style="font-size:16px;line-height:1.4">My existing tool, easier to use and extended to more report types, starting with laser tracker. An approved assistant drafts the text</span></div>
+<div style="font-size:22px;color:#111111;font-weight:700" aria-hidden="true">↓</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">Output</span><span style="font-size:16px;line-height:1.4">A consistent report, checked by the engineer before it goes out</span></div>
+<div style="margin-top:8px;padding:12px 14px;background:#FFF3C4;border-radius:10px;font-size:15px;line-height:1.4"><strong>KPI:</strong> minutes per report, report types covered, users (baseline measured in days 1 to 30)</div>
+</div>
+
+<div style="flex:1 1 320px;background:#FFFFFF;border:1px solid #DAD6CA;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;line-height:1.2">2. Service availability calendar</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">Input</span><span style="font-size:16px;line-height:1.4">A customer request, team availability and travel costs</span></div>
+<div style="font-size:22px;color:#111111;font-weight:700" aria-hidden="true">↓</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">AI step</span><span style="font-size:16px;line-height:1.4">Proposes service options with their travel cost and drafts the answer to sales</span></div>
+<div style="font-size:22px;color:#111111;font-weight:700" aria-hidden="true">↓</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">Output</span><span style="font-size:16px;line-height:1.4">A draft reply and a plan. A person decides and sends</span></div>
+<div style="margin-top:8px;padding:12px 14px;background:#FFF3C4;border-radius:10px;font-size:15px;line-height:1.4"><strong>KPI:</strong> response time to sales, travel cost per planned service</div>
+</div>
+
+<div style="flex:1 1 320px;background:#FFFFFF;border:1px solid #DAD6CA;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;line-height:1.2">3. Group AI roadmap</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">Input</span><span style="font-size:16px;line-height:1.4">Pain points collected from the team of 9</span></div>
+<div style="font-size:22px;color:#111111;font-weight:700" aria-hidden="true">↓</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">AI step</span><span style="font-size:16px;line-height:1.4">Ranked by hours saved. Rules for compliant tool use</span></div>
+<div style="font-size:22px;color:#111111;font-weight:700" aria-hidden="true">↓</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4B5563">Output</span><span style="font-size:16px;line-height:1.4">A short roadmap with KPIs we agree together</span></div>
+<div style="margin-top:8px;padding:12px 14px;background:#FFF3C4;border-radius:10px;font-size:15px;line-height:1.4"><strong>KPI:</strong> tools delivered, hours saved per month</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- TIMELINE -->
+<div style="padding:48px 24px 24px">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#7A5C00;font-weight:600">First 90 days</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1">1 January to 1 April 2027</h2>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+<div style="flex:1 1 300px;display:flex;flex-direction:column;gap:12px">
+<div style="height:12px;box-sizing:border-box;background:#FFC20E;border:2px solid #111111;border-radius:6px"></div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px">31 Jan</div>
+<div style="font-size:16px;line-height:1.5;color:#3F4652">Baselines measured. Pain points collected from the 9. Compliant tools confirmed with IT. KPIs signed off by you.</div>
+</div>
+<div style="flex:1 1 300px;display:flex;flex-direction:column;gap:12px">
+<div style="height:12px;box-sizing:border-box;background:#FFC20E;border:2px solid #111111;border-radius:6px"></div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px">2 Mar</div>
+<div style="font-size:16px;line-height:1.5;color:#3F4652">Report Automator 2.0 piloted with 2 current users.</div>
+</div>
+<div style="flex:1 1 300px;display:flex;flex-direction:column;gap:12px">
+<div style="height:12px;box-sizing:border-box;background:#FFC20E;border:2px solid #111111;border-radius:6px"></div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px">1 Apr</div>
+<div style="font-size:16px;line-height:1.5;color:#3F4652">Calendar prototype. Written results review: what worked, what it saved, what is next.</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SAFE BY DESIGN -->
+<div style="padding:48px 24px 24px">
+<div style="max-width:1120px;margin:0 auto;background:#111111;color:#F6F4EE;border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.1">Safe by design</h2>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+<div style="flex:1 1 240px;font-size:17px;line-height:1.5"><strong style="color:#FFC20E">Company-approved tools only.</strong> Local models where needed. No customer material in public AI tools.</div>
+<div style="flex:1 1 240px;font-size:17px;line-height:1.5"><strong style="color:#FFC20E">A person checks every customer report.</strong> The AI drafts. The engineer decides.</div>
+<div style="flex:1 1 240px;font-size:17px;line-height:1.5"><strong style="color:#FFC20E">The tools belong to Fluke.</strong> Documented, so the whole team can use and keep them.</div>
+</div>
+</div>
+</div>
+
+<!-- WHY ME -->
+<div style="padding:48px 24px 80px">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:32px;line-height:1.1">Why me: I can code and I know our service</h2>
+<p style="margin:0;font-size:18px;line-height:1.6;max-width:860px;color:#3F4652">Python, JavaScript and Visual Basic, all before using AI to code. Report Automator for PARALIGN reports, built by me. Machine-learning analysis of component failures for preventive maintenance at Lufthansa. Master's in AI at Universidad Complutense de Madrid, finishing September 2027, paid by me, studied in my own time.</p>
+<div style="font-size:15px;color:#4B5563">Andrea Guerrero Vanegas · Service Engineer, Spain and Portugal · 20 November 2026</div>
+</div>
+</div>
+
+</div>
+
+<script>
+const q=id=>document.getElementById(id);
+const st={reports:8,minutes:25,weeks:46,rate:50,running:false};
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+function render(){
+  const h=st.reports*st.weeks*st.minutes/60;
+  q('v-reports').textContent=st.reports;q('v-minutes').textContent=st.minutes;
+  q('v-weeks').textContent=st.weeks;q('v-rate').textContent=st.rate;
+  q('out-hours').textContent=fmt(h);q('out-eur').textContent=fmt(h*st.rate);
+  q('in-reports').value=st.reports;q('in-min').value=st.minutes;q('in-weeks').value=st.weeks;q('in-rate').value=st.rate;
+}
+[['in-reports','reports'],['in-min','minutes'],['in-weeks','weeks'],['in-rate','rate']].forEach(([id,k])=>{
+  q(id).addEventListener('input',e=>{st[k]=Number(e.target.value);render();});
+});
+q('preset-low').addEventListener('click',()=>{Object.assign(st,{reports:8,minutes:25,weeks:46,rate:50});render();});
+q('preset-high').addEventListener('click',()=>{Object.assign(st,{reports:8,minutes:25,weeks:52,rate:80});render();});
+q('race-btn').addEventListener('click',()=>{
+  st.running=!st.running;
+  const m=q('bar-manual'),a=q('bar-auto');
+  m.style.transition=st.running?'width 6s linear':'none';
+  a.style.transition=st.running?'width 1s linear':'none';
+  m.style.width=a.style.width=st.running?'100%':'0%';
+  q('race-btn').textContent=st.running?'Reset':'Run the race';
+});
+</script>
+</body>
+</html>
