@@ -129,7 +129,8 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px}
           <div id="pitchBox"><span class="k">Forward / back tilt</span><span class="v" id="pitchV">—</span><span class="d" id="pitchD">&nbsp;</span></div>
         </div>
         <p class="note" id="camMsg">The solid line is true level. Square the phone to the bearing face until both readings are near zero, then capture. Any remaining side tilt is subtracted automatically.</p>
-        <div class="row"><button id="shoot" class="primary" type="button">Capture</button><button id="camClose" type="button">Close camera</button></div>
+        <label class="check"><input id="auto" type="checkbox" checked><span>Take the photo automatically when both readings are green.</span></label>
+        <div class="row"><button id="shoot" class="primary" type="button">Capture now</button><button id="camClose" type="button">Close camera</button></div>
       </div>
     </div>
     <div class="stage" id="stage"><canvas id="cv" aria-label="Photo with the drawn lines and correction arrows"></canvas></div>
@@ -352,7 +353,8 @@ Array.prototype.forEach.call(document.querySelectorAll(".pm"),function(b){b.oncl
   i.value=(s.charAt(0)==="-"||s.charAt(0)==="−")?s.slice(1):"-"+s;compute();draw();}});
 
 /* ---------- camera and level sensor ---------- */
-var D=Math.PI/180,sensorUp=null,stream=null,video=$("video");
+var D=Math.PI/180,sensorUp=null,stream=null,video=$("video"),okSince=0,HOLD_MS=700;
+var CAM_HELP=$("camMsg").textContent;
 function upFromEuler(beta,gamma){ // world "up" in device axes (x right, y top, z out of the screen)
   var b=beta*D,g=gamma*D;return [-Math.sin(g)*Math.cos(b),Math.sin(b),Math.cos(g)*Math.cos(b)];
 }
@@ -375,7 +377,7 @@ function showLevel(){
   var lv=sensorUp?levelFromUp(sensorUp,screenDeg()):null;
   if(!lv){$("rollV").textContent="—";$("pitchV").textContent="—";
     $("rollD").textContent=sensorUp?"Hold the phone upright":"No sensor data";$("pitchD").innerHTML="&nbsp;";
-    $("hline").style.display="none";return;}
+    $("hline").style.display="none";okSince=0;return;}
   var rOk=Math.abs(lv.tilt)<0.3,pOk=Math.abs(lv.pitch)<3;
   $("rollV").textContent=fmt(Math.abs(lv.tilt),1)+"°";
   $("rollD").textContent=rOk?"Level":(lv.tilt>0?"Right side low":"Left side low");
@@ -384,6 +386,11 @@ function showLevel(){
   $("rollBox").className=rOk?"ok":"";$("pitchBox").className=pOk?"ok":"";
   var h=$("hline");h.style.display="block";h.className="hline"+(rOk&&pOk?" ok":"");
   h.style.transform="rotate("+(-lv.tilt).toFixed(2)+"deg)";
+  if($("auto").checked&&rOk&&pOk&&video.videoWidth){
+    var now=Date.now();
+    if(!okSince){okSince=now;camMsg("Level. Hold steady…");}
+    else if(now-okSince>=HOLD_MS){capture();}
+  }else if(okSince){okSince=0;camMsg(CAM_HELP);}
 }
 function camMsg(t){$("camMsg").textContent=t}
 function startVideo(){
@@ -394,7 +401,7 @@ function startVideo(){
   .catch(function(){camMsg("Camera access was not allowed. Allow the camera for this site in Safari settings, or use Load photo.");});
 }
 function openCam(){
-  $("cam").hidden=false;$("stage").hidden=true;sensorUp=null;showLevel();
+  $("cam").hidden=false;$("stage").hidden=true;sensorUp=null;okSince=0;camMsg(CAM_HELP);showLevel();
   var DO=window.DeviceOrientationEvent;
   if(DO&&typeof DO.requestPermission==="function"){
     DO.requestPermission().then(function(r){
@@ -411,15 +418,16 @@ function closeCam(){
 }
 $("camOpen").onclick=openCam;
 $("camClose").onclick=closeCam;
-$("shoot").onclick=function(){
+function capture(){
   if(!video.videoWidth){camMsg("The camera is not ready yet. Wait a moment and try again.");return;}
   var k=Math.min(1,2400/Math.max(video.videoWidth,video.videoHeight));
   work.width=Math.round(video.videoWidth*k);work.height=Math.round(video.videoHeight*k);
   work.getContext("2d").drawImage(video,0,0,work.width,work.height);
   shot=sensorUp?levelFromUp(sensorUp,screenDeg()):null;
   lines.plane=null;lines.ref=null;manualTheta=false;$("theta").value="";$("demoTag").hidden=true;
-  closeCam();update();
-};
+  okSince=0;closeCam();update();
+}
+$("shoot").onclick=capture;
 
 /* ---------- calculation ---------- */
 function update(){
